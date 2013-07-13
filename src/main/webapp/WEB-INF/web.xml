@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.5" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+  <listener>
+    <listener-class>com.appspot.hildy.modules.HildyServletContextListener</listener-class>
+  </listener>
+
+  <filter>
+    <filter-name>guiceFilter</filter-name>
+    <filter-class>com.google.inject.servlet.GuiceFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>guiceFilter</filter-name>
+    <url-pattern>/register/*</url-pattern>
+    <url-pattern>/blogger/*</url-pattern>
+    <url-pattern>/welcome</url-pattern>
+  </filter-mapping>
+
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  
+  <error-page>
+    <error-code>500</error-code>
+    <location>/error.html</location>
+  </error-page>
+</web-app>

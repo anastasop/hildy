@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{blog.title}}</title>
+  <updated>{{blog.updated.fmtAtom}}</updated>
+  <id>http://{{blog.host}}{{blog.feed}}</id>
+  <link rel="alternate" href="http://{{blog.host}}{{blog.url}}" title="{{blog.title}}" type="text/html"/>
+  <link rel="self" href="http://{{blog.host}}{{blog.feed}}" title="{{blog.title}}" type="application/atom+xml"/>
+  <author><name>{{blog.author}}</name></author>
+  {{#entries}}
+    <entry>
+      <id>http://{{blog.host}}{{blog.url}}/entry/{{slug}}</id>
+      <title type="text">{{title}}</title>
+      <link href="http://{{blog.host}}{{blog.url}}/entry/{{slug}}" rel="alternate" type="text/html"/>
+      <updated>{{updated.fmtAtom}}</updated>
+      <published>{{published.fmtAtom}}</published>
+      <content type="html">{{contentHtmlValue}}</content>
+    </entry>
+  {{/entries}}
+</feed>

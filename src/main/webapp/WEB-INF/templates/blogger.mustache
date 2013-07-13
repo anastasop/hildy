@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="/styles/hildy.css" type="text/css">
+    <link rel="alternate" href="/blogger/{{blogger.bloggerId}}/feed" type="application/atom+xml">
+    <title>Hildy</title>
+<style>
+</style>
+</head>
+
+<body>
+{{>header}}
+{{>aboutme}}
+<ul class="toc">
+<li class="toc-head"><b>Articles</b></li>
+{{#entries}}
+<li><a href="./{{blogger.bloggerId}}/entry/{{slug}}">{{title}}</a><span class="toc-when">{{updated.fmtToc}}</span></li>
+{{/entries}}
+</ul>
+</body>
+</html>

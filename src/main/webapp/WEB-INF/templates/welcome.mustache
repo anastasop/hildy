@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="/styles/hildy.css" type="text/css">
+    <title>Hildy</title>
+    <style>
+    .instructions li {
+      margin-bottom: 0.5em;
+    }
+    </style>
+</head>
+
+<body>
+<span class="hildy"><h1>Hildy</h1></span>
+Hildy is a simple blogging application that integrates with <a href="http://www.dropbox.com">dropbox</a>.<br>
+You can create your own blog using your dropbox account in 3 simple steps.
+<div class="instructions">
+<ol>
+<li><a href="/register">Connect</a> your dropbox account with Hildy. This is done with <a href="http://en.wikipedia.org/wiki/OAuth">OAuth</a>
+so Hildy does not store your credentials. In your folder, the directory <strong>Apps/Hildy</strong> will be created. Your blog posts will be stored there.
+Hildy is a registered dropbox application and cannot access any files outside this folder. For details check the
+<a href="https://www.dropbox.com/developers/start/core">dropbox API documentation</a>.
+
+<li>Every <a href="http://daringfireball.net/projects/markdown/">markdown</a> file stored in <strong>Apps/Hildy</strong> becomes a blog post. The files
+must have a suffix of <code>.md</code> or <code>.markdown</code> or <code>.txt</code>. The first <code>&lt;h1&gt;</code> header of the file becomes
+the title of the post. Whenever someone points to your blog, Hildy will sync with dropbox to get the latest versions. Hildy ignores filenames starting
+with <code>draft</code>.
+
+<li>A special, optional file named <strong>aboutme.md</strong> should contain information about yourself like your name, a small description of yourself
+and your contants. This information is display in your Hildy page
+</ol>
+</div>
+
+You can try Hildy for yourself or have a look at our existing blogs<br>
+<ul class="toc">
+<li class="toc-head"><b>Bloggers</b></li>
+{{#.}}
+<li><a href="/blogger/{{bloggerId}}">{{name}}</a></li>
+{{/.}}
+</ul>
+<br/>
+<img src="https://developers.google.com/appengine/images/appengine-silver-120x30.gif" alt="Powered by Google App Engine" />
+</body>
+</html>
